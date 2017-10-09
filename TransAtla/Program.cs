@@ -13,7 +13,7 @@ namespace TransAtla
 
 
         static void Main(string[] args)
-        {
+        { 
             hackerMan();
             InitialiseDictionary();
             UserIO();
@@ -28,18 +28,17 @@ namespace TransAtla
             input = Console.ReadLine();
             name = input;
             Console.WriteLine("Output for " + '"' + name + '"' + " :" );
-            Console.WriteLine('"' + name + '"' + " Translates to: " + binTranslate(name) + " in binary,");
-            Console.WriteLine("Or: " + base64Translate(name) + "in base64,");
-            Console.WriteLine(translateMorse(input) + "in Morse Code,");
-            Console.WriteLine("Or: " + hexTranslate(name) + " in hexadecimal.");
+            Console.WriteLine('"' + name + '"' + " Translates to: " + binTranslate(name) + " in binary,"); // bin translator for name
+            Console.WriteLine("Or: " + base64Translate(name) + "in base64,"); // base64 translator for name
+            Console.WriteLine(translateMorse(input) + "in Morse Code,"); // morse translator for name
+            Console.WriteLine("Or: " + hexTranslate(name) + " in hexadecimal."); // hex translator for name
             Thread.Sleep(500);
             Console.WriteLine("And finally, in ASCII code: ");
-            Console.WriteLine(ASCIICodeTranslate(name));
-            Console.WriteLine("Want to continue? (yes/no)"); //note to self: this is pretty obvious, unless i'm retarded in the future /shrug
+            Console.WriteLine(ASCIICodeTranslate(name)); // ascii translator for name
+            Console.WriteLine("Want to continue? (yes/no)"); 
             Console.WriteLine("(this will clear everything on this window)");
             sudoSandwich();
-
-            Console.ReadLine();
+            Console.ReadKey();
         }
 
         private static void sudoSandwich()
@@ -60,7 +59,7 @@ namespace TransAtla
                 goto sudo;
 
             }
-            if (continu == "yes")
+            else if (continu == "yes")
             {
                 Console.Clear();
                 UserIO();
@@ -109,7 +108,7 @@ namespace TransAtla
                 {'3', string.Concat('.', '.', '.', '-', '-')},
                 {'4', string.Concat('.', '.', '.', '.', '-')},
                 {'5', string.Concat('.', '.', '.', '.', '.')},
-                {'6', string.Concat('-', '.', '.', '.', '.')}, //kms why am i even using '.' and '-' and not . / - //nvm edited it
+                {'6', string.Concat('-', '.', '.', '.', '.')}, //kms why am i even using '.' and '-' and not . / - //nvm fixed it
                 {'7', string.Concat('-', '-', '.', '.', '.')},
                 {'8', string.Concat('-', '-', '-', '.', '.')},
                 {'9', string.Concat('-', '-', '-', '-', '.')},
@@ -188,7 +187,6 @@ namespace TransAtla
         {
             Console.ForegroundColor = ConsoleColor.Green;
         }
-
         
     }
 }
