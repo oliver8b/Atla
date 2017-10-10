@@ -31,6 +31,16 @@ namespace TransAtla
             Console.WriteLine('"' + name + '"' + " Translates to: " + binTranslate(name) + " in binary,"); // bin translator for name
             Console.WriteLine("Or: " + base64Translate(name) + "in base64,"); // base64 translator for name
             Console.WriteLine(translateMorse(input) + "in Morse Code,"); // morse translator for name
+            int inputInInt = 0;
+            try
+            {
+                inputInInt = int.Parse(input);
+                Console.WriteLine("Or: " + ToTrenary(inputInInt) + "in ternary,");
+            }
+            catch 
+            {
+                Console.WriteLine("You didn't input a number, so convert to ternary is impossible");
+            }
             Console.WriteLine("Or: " + hexTranslate(name) + " in hexadecimal."); // hex translator for name
             Thread.Sleep(500);
             Console.WriteLine("And finally, in ASCII code: ");
@@ -182,7 +192,31 @@ namespace TransAtla
             Console.WriteLine("And the sum of that is: ");
             return sum;
         }
+        public static String ToTrenary(int value)
+        {
+            if (value == 0)
+                return "";
 
+            StringBuilder Sb = new StringBuilder();
+            Boolean signed = false;
+
+            if (value < 0)
+            {
+                signed = true;
+                value = -value;
+            }
+
+            while (value > 0)
+            {
+                Sb.Insert(0, value % 3);
+                value /= 3;
+            }
+
+            if (signed)
+                Sb.Insert(0, '-');
+
+            return Sb.ToString();
+        }
         public static void hackerMan()
         {
             Console.ForegroundColor = ConsoleColor.Green;
