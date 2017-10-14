@@ -35,14 +35,16 @@ namespace TransAtla
             try
             {
                 inputInInt = int.Parse(input);
-                Console.WriteLine("Or: " + ToTrenary(inputInInt) + "in ternary,");
+                Console.WriteLine("Or: " + ToTrenary(inputInInt) + " in ternary,");
+                string octalString = Convert.ToString(int.Parse(input), 8);
+                Console.WriteLine("Or: " + octalString + " in ocatl");
+
             }
             catch 
             {
-                Console.WriteLine("You didn't input a number, so convert to ternary is impossible");
+                Console.WriteLine("You didn't input a number, so convert to ternary or octal is impossible");
             }
             Console.WriteLine("Or: " + hexTranslate(name) + " in hexadecimal."); // hex translator for name
-            Thread.Sleep(500);
             Console.WriteLine("And finally, in ASCII code: ");
             Console.WriteLine(ASCIICodeTranslate(name)); // ascii translator for name
             Console.WriteLine("Want to continue? (yes/no)"); 
