@@ -37,7 +37,7 @@ namespace TransAtla
                 inputInInt = int.Parse(input);
                 Console.WriteLine("Or: " + ToTrenary(inputInInt) + " in ternary,");
                 string octalString = Convert.ToString(int.Parse(input), 8);
-                Console.WriteLine("Or: " + octalString + " in ocatl");
+                Console.WriteLine("Or: " + octalString + " in octal");
 
             }
             catch 
